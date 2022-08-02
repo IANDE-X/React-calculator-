@@ -3,6 +3,7 @@ import { SafeAreaView, StyleSheet, Switch, Text } from 'react-native';
 import { myColors } from './src/styles/Colors';
 import { ThemeContext } from './src/context/ThemeContext';
 import MyKeyboard from './src/components/MyKeyboard';
+import * as SplashScreen from 'expo-splash-screen';
 import styled from "styled-components";
 //import { Entypo } from '@expo/vector-icons';
 //import { ThemeProvider } from 'styled-components';
@@ -14,18 +15,29 @@ import styled from "styled-components";
 
 export default function App() {
   const [theme, setTheme] = useState('light');
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
     <ThemeContext.Provider  value={theme} >
 
       <SafeAreaView style={ theme === 'light' ? styles.container : [styles.container, {backgroundColor: 'black'}]}>
-        <Switch  style={{height:30,width:80,top:40,
+        {/* <Switch  style={{height:30,width:80,top:40,
 }}      
           value={theme === 'dark'}
           onValueChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
           
-        />
+        /> */}
+              <Switch style={{height:30,width:80,top:40,}}
+        trackColor={{ false: "#767577", true: "lime" , }}
+        thumbColor={isEnabled ? "orange" : "#f4f3f4"}
+    
+        value={theme === 'dark'}
+        onValueChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+      />
        
       <Text style={{fontWeight: '400',fontFamily:'monospace',}}>Swipe to Dark mode!</Text>
+
+
         <MyKeyboard />
         {/* <Img src='https://cdn-icons.flaticon.com/png/128/5005/premium/5005751.png?token=exp=1659363948~hmac=4b26ddbd236523c99689403f6f6372d1' alt="Girl in a jacket" style={{width:50,height:60,}}/> */}
 
