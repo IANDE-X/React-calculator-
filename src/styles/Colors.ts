@@ -1,0 +1,18 @@
+export const myColors = {
+    light: '#F1F2F3',
+    dark: '#17171C',
+    blue: '#6495ED',
+    btnGray: '#4E505F',
+    btnDark: '#2E2F38',
+    gray: '#747477',
+    black: '#000000',
+    white: '#FFFFFF', 
+    result: '#57FF00',
+    red: '#EA0D01',
+    orange:'#FF5E0E',
+    magenta:'#8B008B',
+    toggleBorder1: '#FFF',
+    gradient1: 'linear-gradient(#39598A, #79D7ED)',
+    toggleBorder: '#6B8096',
+    gradient: 'linear-gradient(#091236, #1E215D)',
+}
